@@ -17,14 +17,10 @@ export const store = configureStore({
     contacts: persistedContactsReducer,
     filter: filterReducer,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
     }),
-});
-
-store.subscribe(() => {
-  console.log('STORE UPDATED:', store.getState());
 });
 
 export const persistor = persistStore(store);

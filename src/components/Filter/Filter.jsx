@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => (
-    <div className={styles['filter-container']}>
+  <div className={styles['filter-container']}>
     <input
       type="text"
       className={styles.input}

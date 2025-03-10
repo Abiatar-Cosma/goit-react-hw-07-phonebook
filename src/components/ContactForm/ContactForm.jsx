@@ -44,16 +44,14 @@ const ContactForm = ({ onSubmit }) => {
     { code: '+380', country: 'UA' },
   ];
 
-  const handleNameChange = e => setName(e.target.value);
-  const handleNumberChange = e => setNumber(e.target.value);
-  const handleCountryChange = e => setCountryCode(e.target.value);
+  const handleNameChange = (e) => setName(e.target.value);
+  const handleNumberChange = (e) => setNumber(e.target.value);
+  const handleCountryChange = (e) => setCountryCode(e.target.value);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formattedNumber = `${countryCode} ${number
-      .trim()
-      .replace(/^0+/, '')}`;
+    const formattedNumber = `${countryCode} ${number.trim().replace(/^0+/, '')}`;
 
     onSubmit({ id: nanoid(), name, number: formattedNumber });
 
